@@ -26,7 +26,7 @@ public class ConversorDeUnidades {
 
             if(opc > 0 && opc <= 3){
                 
-                while(opc2!= 0){
+                do{
                     /*Entrada de texto con las opciones*/
                     System.out.println("Ingrese la opción que desea:");
                     
@@ -157,7 +157,7 @@ public class ConversorDeUnidades {
                             System.out.println("Volver al menú");
                             break;
                     }
-                }
+                }while(opc2!= 0);
             }
             else if(opc == 0) System.out.println("Adios, con el, corazon ʕ•́ᴥ•̀ʔっ ");
             else System.out.println("ENTRADA INCORRECTA  ᕙ( ︡'︡益'︠)ง  ");;
