@@ -15,7 +15,7 @@ public class ConversorDistancia {
       return distancia;
   }
   public double PulgadasMillas(double distancia){/*Conversor de pulgadas a millas*/
-      distancia=distancia/63360;   
+      distancia=distancia*0.000015783;   
       return distancia;
   }
   
