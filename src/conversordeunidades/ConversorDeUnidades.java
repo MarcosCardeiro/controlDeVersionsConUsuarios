@@ -8,9 +8,9 @@ public class ConversorDeUnidades {
         Scanner leer = new Scanner(System.in);
         char opc = 10;
         /*objetos para llamar a clases*/
-        ConversorDistancia D;
-        ConversorPotencia P;
-        ConversorTemperatura T;
+//        ConversorDistancia D = new ConversorDistancia;
+//        ConversorPotencia P = new ConversorPotencia;
+//        ConversorTemperatura T = new ConversorTemperatura;
         
         do{
             System.out.println("Ingrese la opción que desea:");
@@ -76,7 +76,7 @@ public class ConversorDeUnidades {
                             else{
                                 System.out.println("Introduzca la cantidad en Celsius que quiera convertir a Fahrenheit:");
                                     temperatura = leer.nextDouble();
-                                D.CelsiusAFahrenheit(temperatura);
+                                T.CelsiusAFahrenheit(temperatura);
                                 System.out.println("La cantidad sería: " + temperatura);
                             }
                             break;
