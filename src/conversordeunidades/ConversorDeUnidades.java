@@ -141,8 +141,8 @@ public class ConversorDeUnidades {
                     }
                 }while(opc2!= 0);
             }
-            else if(opc == 0) System.out.println("Adios, con el, corazon ʕ•́ᴥ•̀ʔっ ");
-            else System.out.println("ENTRADA INCORRECTA  ᕙ( ︡'︡益'︠)ง  ");
+            else if(opc == 0) System.out.println("Adios, con el, corazon ?•´?•`?? ");
+            else System.out.println("ENTRADA INCORRECTA  ?( ?'??'?)?  ");;
             
         }while(opc != 0);
     }
