@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class ConversorDeUnidades {
 
     public static void main(String[] args) {
-        Scanner leer = new Scanner(System.in);
-        char opc = 10;
+         Scanner leer = new Scanner(System.in);
+        int opc = 10;
         /*objetos para llamar a clases*/
-//        ConversorDistancia D = new ConversorDistancia;
-//        ConversorPotencia P = new ConversorPotencia;
-//        ConversorTemperatura T = new ConversorTemperatura;
+        ConversorDistancia D = new ConversorDistancia();
+        ConversorPotencia P = new ConversorPotencia();
+        ConversorTemperatura T = new ConversorTemperatura();
         
         do{
             System.out.println("Ingrese la opción que desea:");
@@ -19,9 +19,10 @@ public class ConversorDeUnidades {
                 System.out.println("2 - Transformar Potencia.");
                 System.out.println("3 - Transformar Temperatura.");
                 System.out.println("0 - Saír.");
-
+                
+                opc = leer.nextInt();
                 /*variable para las opciones, CHAR*/
-            char opc2 = 0;
+            int opc2 = 0;
             double distancia, temperatura, potencia;
 
             if(opc > 0 && opc <= 3){
@@ -30,13 +31,19 @@ public class ConversorDeUnidades {
                     /*Entrada de texto con las opciones*/
                     System.out.println("Ingrese la opción que desea:");
                     
-                    /*opciO'óns para lonxitudes*/
+                    /*opcións para lonxitudes*/
                     if(opc == 1){
-                        System.out.println("1 - Kilómetros a Millas.");
-                        System.out.println("2 - Millas a Kilómetros.");
-                        System.out.println("3 - Millas a Pulgadas.");
-                        System.out.println("4 - Pulgadas a Millas.");
-                        System.out.println("0 - Volver al menú.");
+                        /*PIDO UNIDADES DE DISTANCIA PARA CONVERTIR*/
+                        System.out.println("ELIJA LA UNIDAD EN LA QUE ESTÁ SU MEDIDA:");
+                            Mostrar();
+                        int unidad1 = leer.nextInt();
+                        System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
+                            Mostrar();
+                        int unidad2 = leer.nextInt();
+                        System.out.println("CUAL ES SU PUTA CANTIDA ME CAGO EN JESUSITO:");
+                            distancia = leer.nextDouble();
+                            
+                        System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2));
                     }
                     /*opcións para Potencias*/
                     else if(opc == 2){
@@ -53,109 +60,84 @@ public class ConversorDeUnidades {
                         System.out.println("4 - Kelvin a Celsius.");
                         System.out.println("0 - Volver al menú.");
                     }
-                    
-                    opc2= leer.next().charAt(0);
-                        /*SWITCH con los TODOS casos*/
-                    switch(opc2){
-                        case 1:
-                            /*opcion para lonxitudes*/
-                            if(opc == 1){
-                                System.out.println("Introduzca la cantidad en Kilómetros que quiera convertir a Millas:");
-                                    distancia = leer.nextDouble();
-                                D.KmsMillas(distancia);
-                                System.out.println("La cantidad sería: " + distancia);
-                            }
-                            /*opción para Potencias*/
-                            else if(opc == 2){
-                                System.out.println("Introduzca la cantidad en KW que quiera convertir a CV:");
-                                    potencia = leer.nextDouble();
-                                P.KWaCV(potencia);
-                                System.out.println("La cantidad sería: " + potencia);
-                            }
-                            /*opción para Temperaturas*/
-                            else{
-                                System.out.println("Introduzca la cantidad en Celsius que quiera convertir a Fahrenheit:");
-                                    temperatura = leer.nextDouble();
-                                T.CelsiusAFahrenheit(temperatura);
-                                System.out.println("La cantidad sería: " + temperatura);
-                            }
-                            break;
+                    if(opc == 1)/*NO SE HASE NAH POR QUE YA ESTA HECHO EN EL ANTERIOR IF*/;
+                        else{
+                            opc2= leer.nextInt();
+                                /*SWITCH con los TODOS casos*/
+                            switch(opc2){
+                                case 1:
 
-                        case 2:
-                            /*opcion para lonxitudes*/
-                            if(opc == 1){
-                                System.out.println("Introduzca la cantidad en Millas que quiera convertir a Kilómetros:");
-                                    distancia = leer.nextDouble();
-                                D.MillasKms(distancia);
-                                System.out.println("La cantidad sería: " + distancia);
-                            }
-                            /*opción para Potencias*/
-                            else if(opc == 2){
-                                System.out.println("Introduzca la cantidad en CV que quiera convertir a KW:");
-                                    potencia = leer.nextDouble();
-                                P.CVaKW(potencia);
-                                System.out.println("La cantidad sería: " + potencia);
-                            }
-                            /*opción para Temperaturas*/
-                            else{
-                                System.out.println("Introduzca la cantidad en Fahrenheit que quiera convertir a Celsius:");
-                                    temperatura = leer.nextDouble();
-                                T.FahrenheitACelsius(temperatura);
-                                System.out.println("La cantidad sería: " + temperatura);
-                            }
-                            break;
+                                    /*opción para Potencias*/
+                                    if(opc == 2){
+                                        System.out.println("Introduzca la cantidad en KW que quiera convertir a CV:");
+                                            potencia = leer.nextDouble();
 
-                        case 3:
-                            /*opcion para lonxitudes*/
-                            if(opc == 1){
-                                System.out.println("Introduzca la cantidad en Millas que quiera convertir a Pulgadas:");
-                                    distancia = leer.nextDouble();
-                                D.MillasPulgadas(distancia);
-                                System.out.println("La cantidad sería: " + distancia);
-                            }
-                            /*opción para Potencias*/
-                            else if(opc == 2){
-                                System.out.println("Introduzca la cantidad en KW que quiera convertir a Ft/Lb:");
-                                    potencia = leer.nextDouble();
-                                P.KWaFT(potencia);
-                                System.out.println("La cantidad sería: " + potencia);
-                            }
-                            /*opción para Temperaturas*/
-                            else{
-                                System.out.println("Introduzca la cantidad en Celsius que quiera convertir a Kelvin:");
-                                    temperatura = leer.nextDouble();
-                                T.CelsiusAKelvin(temperatura);
-                                System.out.println("La cantidad sería: " + temperatura);
-                            }
-                            break;
+                                        System.out.println("La cantidad sería: " + P.KWaCV(potencia));
+                                    }
+                                    /*opción para Temperaturas*/
+                                    else{
+                                        System.out.println("Introduzca la cantidad en Celsius que quiera convertir a Fahrenheit:");
+                                            temperatura = leer.nextDouble();
 
-                        case 4:
-                            /*opcion para lonxitudes*/
-                            if(opc == 1){
-                                System.out.println("Introduzca la cantidad en Pulgadas que quiera convertir a Millas:");
-                                    distancia = leer.nextDouble();
-                                D.PulgadasMillas(distancia);
-                                System.out.println("La cantidad sería: " + distancia);
-                            }
-                            /*opción para Potencias*/
-                            else if(opc == 2){
-                                System.out.println("Introduzca la cantidad en Ft/Lb que quiera convertir a KW:");
-                                    potencia = leer.nextDouble();
-                                P.FTaKW(potencia);
-                                System.out.println("La cantidad sería: " + potencia);
-                            }
-                            /*opción para Temperaturas*/
-                            else{
-                                System.out.println("Introduzca la cantidad en Kelvin que quiera convertir a Celsius:");
-                                    temperatura = leer.nextDouble();
-                                T.KelvinACelsius(temperatura);
-                                System.out.println("La cantidad sería: " + temperatura);
-                            }
-                            break;
+                                        System.out.println("La cantidad sería: " + T.CelsiusAFahrenheit(temperatura));
+                                    }
+                                    break;
 
-                        case 0:
-                            System.out.println("Volver al menú");
-                            break;
+                                case 2:
+                                    /*opción para Potencias*/
+                                    if(opc == 2){
+                                        System.out.println("Introduzca la cantidad en CV que quiera convertir a KW:");
+                                            potencia = leer.nextDouble();
+
+                                        System.out.println("La cantidad sería: " + P.CVaKW(potencia));
+                                    }
+                                    /*opción para Temperaturas*/
+                                    else{
+                                        System.out.println("Introduzca la cantidad en Fahrenheit que quiera convertir a Celsius:");
+                                            temperatura = leer.nextDouble();
+
+                                        System.out.println("La cantidad sería: " + T.FahrenheitACelsius(temperatura));
+                                    }
+                                    break;
+
+                                case 3:
+                                    /*opción para Potencias*/
+                                    if(opc == 2){
+                                        System.out.println("Introduzca la cantidad en KW que quiera convertir a Ft/Lb:");
+                                            potencia = leer.nextDouble();
+
+                                        System.out.println("La cantidad sería: " + P.KWaFT(potencia));
+                                    }
+                                    /*opción para Temperaturas*/
+                                    else{
+                                        System.out.println("Introduzca la cantidad en Celsius que quiera convertir a Kelvin:");
+                                            temperatura = leer.nextDouble();
+
+                                        System.out.println("La cantidad sería: " + T.CelsiusAKelvin(temperatura));
+                                    }
+                                    break;
+
+                                case 4:
+                                    /*opción para Potencias*/
+                                    if(opc == 2){
+                                        System.out.println("Introduzca la cantidad en Ft/Lb que quiera convertir a KW:");
+                                            potencia = leer.nextDouble();
+
+                                        System.out.println("La cantidad sería: " + P.FTaKW(potencia));
+                                    }
+                                    /*opción para Temperaturas*/
+                                    else{
+                                        System.out.println("Introduzca la cantidad en Kelvin que quiera convertir a Celsius:");
+                                            temperatura = leer.nextDouble();
+
+                                        System.out.println("La cantidad sería: " + T.KelvinACelsius(temperatura));
+                                    }
+                                    break;
+
+                                case 0:
+                                    System.out.println("Volver al menú");
+                                    break;
+                            }
                     }
                 }while(opc2!= 0);
             }
@@ -163,6 +145,18 @@ public class ConversorDeUnidades {
             else System.out.println("ENTRADA INCORRECTA  ᕙ( ︡'︡益'︠)ง  ");;
             
         }while(opc != 0);
+    }
+
+    private static void Mostrar() {
+        System.out.println("1.- Kms\n" +
+                           "2.- Metros\n" +
+                           "3.- Cms\n" +
+                           "4.- Pulgadas\n" +
+                           "5.- Yardas\n" +
+                           "6.- Pés\n" +
+                           "7.- Millas\n" +
+                           "8.- Millas náuticas\n" +
+                           "9.- Saír");
     }
     
 }
