@@ -2,21 +2,10 @@ package conversordeunidades;
 
 public class ConversorDistancia {
    
-  public double KmsMillas(double distancia){/*Conversor de kilometros a millas*/
-    distancia=distancia*0.62;    /*1 kilometro son 0.62 millas*/
-     return distancia;
-}
-  public double MillasKms(double distancia){/*Conversor de millas a kilometros*/
-      distancia=distancia/0.62;
-      return distancia;
-  }
-  public double MillasPulgadas(double distancia){/*Conversor de millas a pulgadas*/
-      distancia=distancia*63360;    /*1 milla son 63360 pulgadas*/
-      return distancia;
-  }
-  public double PulgadasMillas(double distancia){/*Conversor de pulgadas a millas*/
-      distancia=distancia*0.000015783;   
-      return distancia;
-  }
-  
+  public double ConversorUnidades(double distancia,int opc1,int opc2){
+      double[] conversor1={1,0.001,0.00001,0.0000254,0.0009144,0.0003048,1.6093,1.8520};
+      double[] conversor2={1,1000,1000000,39,370.10,1,093.61,3,280.84,0.6214,0.5400};
+      distancia=((distancia*conversor1[opc1])*conversor2[opc2]);
+    return distancia;  
+  } 
 }
