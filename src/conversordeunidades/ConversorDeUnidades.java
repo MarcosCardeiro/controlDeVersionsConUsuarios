@@ -43,7 +43,7 @@ public class ConversorDeUnidades {
                         System.out.println("CUAL ES SU PUTA CANTIDA ME CAGO EN JESUSITO:");
                             distancia = leer.nextDouble();
                             
-                        System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2));
+                        System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, (unidad1 - 1), (unidad2 - 1)) ); 
                     }
                     /*opcións para Potencias*/
                     else if(opc == 2){
