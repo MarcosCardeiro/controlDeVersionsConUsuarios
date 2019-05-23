@@ -1,6 +1,8 @@
- build/classes/conversordeunidades/ConversorDeUnidades.class
-        build/classes/conversordeunidades/ConversorDistancia.class
-        build/classes/conversordeunidades/ConversorPotencia.class
-        build/classes/conversordeunidades/ConversorTemperatura.class
-
+build/classes/conversordeunidades/ConversorDeUnidades.class
+build/classes/conversordeunidades/ConversorDistancia.class
+build/classes/conversordeunidades/ConversorPotencia.class
+build/classes/conversordeunidades/ConversorTemperatura.class
 /build/
+nbproject/private/private.properties
+nbproject/private/private.xml
+
