@@ -1,21 +1,11 @@
 package conversordeunidades;
 
 public class ConversorPotencia {
-    public double KWaCV(double potencia){/*Conversor de KW a CV*/
-        potencia=potencia*1.34;    /*1 KW equivale a 1.34 CV*/
-        return potencia;
-    }
-    public double CVaKW(double potencia){/*Conversor de CV a KW*/
-        potencia=potencia*0.74;  /*1 CV equivale a 0.74 KW*/
-        return potencia;
-    }
-    public double KWaFT(double potencia){/*Conversor de KW a Ft/Lb*/
-        potencia=potencia*737.56;  /*1 KW equivale a 737.56 Ft/Lb*/
-        return potencia;
-    }
-    public double FTaKW(double potencia){/*Conversor de Ft/Lb*/
-        potencia=potencia*0.00135;   /*equivalencia de 1 Ft/lb a KW*/
-        return potencia;
-    }
-    
+   
+  public double ConversorPotencias(double distancia,int opc1,int opc2){
+      double[] conversor1={1,1000,735.49,745.7,1000000,1.3558};
+      double[] conversor2={1,0.001,0.001359,0.00134102,0.000001,0.737562};
+      distancia=((distancia*conversor1[opc1])*conversor2[opc2]);
+    return distancia;  
+  } 
 }
