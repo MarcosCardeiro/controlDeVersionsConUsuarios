@@ -6,7 +6,7 @@ public class ConversorDeUnidades {
 
     public static void main(String[] args) {
          Scanner leer = new Scanner(System.in);
-        int opc = 10;
+        int opc;
         /*objetos para llamar a clases*/
         ConversorDistancia D = new ConversorDistancia();
         ConversorPotencia P = new ConversorPotencia();
