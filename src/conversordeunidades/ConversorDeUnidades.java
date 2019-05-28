@@ -31,15 +31,15 @@ public class ConversorDeUnidades {
                     /*Entrada de texto con las opciones*/
                     System.out.println("Ingrese la opción que desea:");
                     
-                    /*opcións para lonxitudes*/
-                    if(opc == 1){
+                /*opcións para lonxitudes*/
+                switch (opc) {
+                    case 1:
                         do{
-                            unidad1 = 0;
                             unidad2 = 0;
                             /*PIDO UNIDADES DE DISTANCIA PARA CONVERTIR*/
                             System.out.println("ELIJA LA UNIDAD EN LA QUE ESTÁ SU MEDIDA:");
-                                Mostrar(opc);
-                                unidad1 = leer.nextInt();
+                            Mostrar(opc);
+                            unidad1 = leer.nextInt();
                             if(unidad1 >= 1 && unidad1 <=8){
                                 System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
                                 Mostrar(opc);
@@ -50,26 +50,25 @@ public class ConversorDeUnidades {
                                     
                                     System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2) );
                                 }
-                                    else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
-                                    
-                                        else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
-                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");
+                                else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
                                 
                                 else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
-                                
+                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");                                
                             
-                             
+                            else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");                             
+                            
+                            
+                            
                         }while(unidad1 != 9 && unidad2 != 9);
-                    }
-                    /*opcións para Potencias*/
-                    else if(opc == 2){
+                        break;
+                /*opcións para Temperaturas*/
+                    case 2:
                         do{
-                            unidad1 = 0;
                             unidad2 = 0;
                             /*PIDO UNIDADES DE DISTANCIA PARA CONVERTIR*/
                             System.out.println("ELIJA LA UNIDAD EN LA QUE ESTÁ SU MEDIDA:");
-                                Mostrar(opc);
-                                unidad1 = leer.nextInt();
+                            Mostrar(opc);
+                            unidad1 = leer.nextInt();
                             if(unidad1 >= 1 && unidad1 <=6){
                                 System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
                                 Mostrar(opc);
@@ -78,26 +77,25 @@ public class ConversorDeUnidades {
                                     System.out.println("CUAL ES SU PUTA CANTIDAD ME CAGO EN JESUSITO:");
                                     potencia  = leer.nextDouble();
                                     
-                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(potencia, unidad1, unidad2) ); 
-
-                                }
-                                    else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
+                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(potencia, unidad1, unidad2) );
                                     
-                                        else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
-                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");
+                                }
+                                else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
                                 
                                 else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
-                                
+                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");                                
+                            
+                            else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
+                            
                         }while(unidad1 != 9 && unidad2 != 9);
-                    }/*opcións para Temperaturas*/
-                    else if (opc == 3){
+                        break;
+                    case 3:
                         do{
-                            unidad1 = 0;
                             unidad2 = 0;
                             /*PIDO UNIDADES DE DISTANCIA PARA CONVERTIR*/
                             System.out.println("ELIJA LA UNIDAD EN LA QUE ESTÁ SU MEDIDA:");
-                                Mostrar(opc);
-                                unidad1 = leer.nextInt();
+                            Mostrar(opc);
+                            unidad1 = leer.nextInt();
                             if(unidad1 >= 1 && unidad1 <=8){
                                 System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
                                 Mostrar(opc);
@@ -108,15 +106,18 @@ public class ConversorDeUnidades {
                                     System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(temperatura, unidad1, unidad2) ); 
                                     
                                 }
-                                    else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
-                                    
-                                        else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
-                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");
+                                else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
                                 
                                 else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
-                                
+                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");                                
+                            
+                            else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
+                            
                         }while(unidad1 != 9 && unidad2 != 9);
-                    }
+                        break;
+                    default:
+                        break;
+                }
                    
                         
                 
@@ -128,35 +129,41 @@ public class ConversorDeUnidades {
 
     private static void Mostrar(int opc) {
         
-        if(opc == 1){
-            System.out.println("1.- Kms\n" +
-                                "2.- Metros\n" +
-                                "3.- Cms\n" +
-                                "4.- Pulgadas\n" +
-                                "5.- Yardas\n" +
-                                "6.- Pés\n" +
-                                "7.- Millas\n" +
-                                "8.- Millas náuticas\n" +
-                                "9.- Saír");
-        }else if(opc == 2){
-            System.out.println("1.- Vatio\n" +
-                                "2.- KW\n" +
-                                "3.- CV\n" +
-                                "4.- CF\n" +
-                                "5.- MW\n" +
-                                "6.- Pé/libra\n" +
-                                "9.- Saír");
-        }else if(opc == 3){
-	    System.out.println("1.- Celsis\n" +
-                                "2.- Fahrenheit\n" +
-                                "3.- Kelvin\n" +
-                                "4.- Rankine\n" +
-                                "5.- Delisle\n" +
-                                "6.- Newton\n" +
-				"7.- Réamur\n" +
-				"8.- Romer\n" +
-                                "9.- Saír");
-	}
+        switch (opc) {
+            case 1:
+                System.out.println("1.- Kms\n" +
+                        "2.- Metros\n" +
+                        "3.- Cms\n" +
+                        "4.- Pulgadas\n" +
+                        "5.- Yardas\n" +
+                        "6.- Pés\n" +
+                        "7.- Millas\n" +
+                        "8.- Millas náuticas\n" +
+                        "9.- Saír");
+                break;
+            case 2:
+                System.out.println("1.- Vatio\n" +
+                        "2.- KW\n" +
+                        "3.- CV\n" +
+                        "4.- CF\n" +
+                        "5.- MW\n" +
+                        "6.- Pé/libra\n" +
+                        "9.- Saír");
+                break;
+            case 3:
+                System.out.println("1.- Celsis\n" +
+                        "2.- Fahrenheit\n" +
+                        "3.- Kelvin\n" +
+                        "4.- Rankine\n" +
+                        "5.- Delisle\n" +
+                        "6.- Newton\n" +
+                        "7.- Réamur\n" +
+                        "8.- Romer\n" +
+                        "9.- Saír");
+                break;
+            default:
+                break;
+        }
     }
     
 }
