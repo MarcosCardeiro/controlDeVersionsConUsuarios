@@ -27,56 +27,95 @@ public class ConversorDeUnidades {
             if(opc > 0 && opc <= 3){
                 
                 
-                    int unidad1, unidad2;
+                    int unidad1 , unidad2;
                     /*Entrada de texto con las opciones*/
                     System.out.println("Ingrese la opción que desea:");
                     
                     /*opcións para lonxitudes*/
                     if(opc == 1){
                         do{
+                            unidad1 = 0;
+                            unidad2 = 0;
                             /*PIDO UNIDADES DE DISTANCIA PARA CONVERTIR*/
                             System.out.println("ELIJA LA UNIDAD EN LA QUE ESTÁ SU MEDIDA:");
                                 Mostrar(opc);
                                 unidad1 = leer.nextInt();
-                            System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
+                            if(unidad1 >= 1 && unidad1 <=8){
+                                System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
                                 Mostrar(opc);
                                 unidad2 = leer.nextInt();
-                            System.out.println("CUAL ES SU PUTA CANTIDA ME CAGO EN JESUSITO:");
-                                distancia = leer.nextDouble();
-
-                            System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2) ); 
-                        }while(unidad1 == 9 && unidad2 == 9);
+                                if(unidad2 >= 1 && unidad2 <=8){
+                                    System.out.println("CUAL ES SU PUTA CANTIDAD ME CAGO EN JESUSITO:");
+                                    distancia = leer.nextDouble();
+                                    
+                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2) );
+                                }
+                                    else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
+                                    
+                                        else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
+                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");
+                                
+                                else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
+                                
+                            
+                             
+                        }while(unidad1 != 9 && unidad2 != 9);
                     }
                     /*opcións para Potencias*/
                     else if(opc == 2){
                         do{
-                            /*PIDO UNIDADES DE POTENCIA PARA CONVERTIR*/
+                            unidad1 = 0;
+                            unidad2 = 0;
+                            /*PIDO UNIDADES DE DISTANCIA PARA CONVERTIR*/
                             System.out.println("ELIJA LA UNIDAD EN LA QUE ESTÁ SU MEDIDA:");
                                 Mostrar(opc);
-                            unidad1 = leer.nextInt();
-                            System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
+                                unidad1 = leer.nextInt();
+                            if(unidad1 >= 1 && unidad1 <=6){
+                                System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
                                 Mostrar(opc);
-                            unidad2 = leer.nextInt();
-                            System.out.println("CUAL ES SU PUTA CANTIDA ME CAGO EN JESUSITO:");
-                                potencia = leer.nextDouble();
+                                unidad2 = leer.nextInt();
+                                if(unidad2 >= 1 && unidad2 <=8){
+                                    System.out.println("CUAL ES SU PUTA CANTIDAD ME CAGO EN JESUSITO:");
+                                    potencia  = leer.nextDouble();
+                                    
+                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2) ); 
 
-                            System.out.println("SU PUTA POTENCIA ES: " + P.ConversorPotencias(potencia, unidad1, unidad2) );
-                        }while(unidad1 == 9 && unidad2 == 9);
+                                }
+                                    else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
+                                    
+                                        else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
+                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");
+                                
+                                else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
+                                
+                        }while(unidad1 != 9 && unidad2 != 9);
                     }/*opcións para Temperaturas*/
                     else if (opc == 3){
                         do{
-                            /*PIDO UNIDADES DE TEMPERATURA PARA CONVERTIR*/
+                            unidad1 = 0;
+                            unidad2 = 0;
+                            /*PIDO UNIDADES DE DISTANCIA PARA CONVERTIR*/
                             System.out.println("ELIJA LA UNIDAD EN LA QUE ESTÁ SU MEDIDA:");
                                 Mostrar(opc);
-                            unidad1 = leer.nextInt();
-                            System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
+                                unidad1 = leer.nextInt();
+                            if(unidad1 >= 1 && unidad1 <=8){
+                                System.out.println("ELIJA LA UNIDAD A LA QUE QUIERE CONVERTIR:");
                                 Mostrar(opc);
-                            unidad2 = leer.nextInt();
-                            System.out.println("CUAL ES SU PUTA CANTIDA ME CAGO EN JESUSITO:");
-                                temperatura = leer.nextDouble();
-
-                            System.out.println("SU PUTA POTENCIA ES: " + T.ConversorTemperaturas(temperatura, unidad1, unidad2) );
-                        }while(unidad1 == 9 && unidad2 == 9);
+                                unidad2 = leer.nextInt();
+                                if(unidad2 >= 1 && unidad2 <=8){
+                                    System.out.println("CUAL ES SU PUTA CANTIDAD ME CAGO EN JESUSITO:");
+                                    temperatura  = leer.nextDouble();
+                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2) ); 
+                                    
+                                }
+                                    else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
+                                    
+                                        else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
+                            }else if(unidad1 == 9) System.out.println("Cambiando a menú de conversión");
+                                
+                                else    System.out.println("A INTRODUCIDO UN NÚMERO NO RECOGIDO EN LAS OPCIONES");
+                                
+                        }while(unidad1 != 9 && unidad2 != 9);
                     }
                    
                         
