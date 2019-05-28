@@ -78,7 +78,7 @@ public class ConversorDeUnidades {
                                     System.out.println("CUAL ES SU PUTA CANTIDAD ME CAGO EN JESUSITO:");
                                     potencia  = leer.nextDouble();
                                     
-                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2) ); 
+                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(potencia, unidad1, unidad2) ); 
 
                                 }
                                     else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
@@ -105,7 +105,7 @@ public class ConversorDeUnidades {
                                 if(unidad2 >= 1 && unidad2 <=8){
                                     System.out.println("CUAL ES SU PUTA CANTIDAD ME CAGO EN JESUSITO:");
                                     temperatura  = leer.nextDouble();
-                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(distancia, unidad1, unidad2) ); 
+                                    System.out.println("SU PUTA DISTANCIA ES: " + D.ConversorUnidades(temperatura, unidad1, unidad2) ); 
                                     
                                 }
                                     else if(unidad2 == 9) System.out.println("Cambiando a menú de conversión");
